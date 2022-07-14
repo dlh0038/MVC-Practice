@@ -1,2 +1,6 @@
 dotnet-aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
 dotnet-aspnet-codegenerator controller -name SchoolController -m Student -dc SchoolContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
+dotnet-aspnet-codegenerator controller -name CourseController -m Course
+-dc SchoolContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
+
+after scaffolding, need to ef migrations and db update
