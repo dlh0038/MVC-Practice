@@ -1,0 +1,20 @@
+dotnet new mvc -o MvcMovie
+code -r MvcMovie/
+dotnet watch run
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SQLite
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet build
+dotnet-aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLa…
+dotnet build
+dotnet ef migrations add init
+dotnet ef database update
+dotnet watch run
+dotnet-aspnet-codegenerator controller -name SchoolController -m Student -dc SchoolContext --relativeFolderPath Controllers --useDefaultLa…
+dotnet build
+dotnet ef migrations add initCreate
+dotnet ef migrations add initCreate --context SchoolContext
+dotnet ef database update
+dotnet ef database update --context SchoolContext
+dotnet watch run
